@@ -7,10 +7,12 @@ interface Props {
 	alt?: string;
 	title?: string;
 	tags: string[];
+	img?: string;
 	children?: HTMLElement | HTMLElement[];
 }
 
-const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'] } = Astro.props;
+const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'], img = './assets/images/project.png' } = Astro.props;
+console.log(img, 'fook')
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
@@ -21,7 +23,7 @@ const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags
 		<a href={url} aria-label="link to project">
 			<div class="relative flex items-end overflow-hidden rounded-xl">
 				<Image
-					src={projectImage}
+					src={img}
 					alt={alt}
 					aspectRatio="4:4"
 					format="png"
