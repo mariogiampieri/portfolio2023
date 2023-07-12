@@ -2,6 +2,11 @@
 import projectImage from '@assets/images/project.png';
 import { Image } from '@astrojs/image/components';
 import Tags from '@components/ui/Tags.astro';
+import sdp from '@assets/images/sdp.png';
+import aacps from '@assets/images/aacps.png';
+import d3 from '@assets/images/d3.png';
+import hcps from '@assets/images/hcps.png';
+
 interface Props {
 	url?: string;
 	alt?: string;
@@ -11,8 +16,23 @@ interface Props {
 	children?: HTMLElement | HTMLElement[];
 }
 
-const { url = '#', alt = 'Project image', title = 'Project title', tags = ['Tags'], img = './assets/images/project.png' } = Astro.props;
-console.log(img, 'fook')
+const {
+	url = '#',
+	alt = 'Project image',
+	title = 'Project title',
+	tags = ['Tags'],
+	img = './assets/images/project.png',
+} = Astro.props;
+
+var xwalk = {
+	sdp: sdp,
+	aacps: aacps,
+	d3: d3,
+	hcps: hcps,
+	hsq: projectImage,
+	mcps: projectImage,
+};
+console.log(xwalk[img]);
 ---
 
 <section class="w-full p-4 md:w-1/2 lg:w-1/3">
